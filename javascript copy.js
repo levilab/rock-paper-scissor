@@ -93,13 +93,13 @@ function playGame(choice) {
 }
 
 rock.addEventListener('click', () => {
-playGame('rock', getComputerChoice)})
+playGame('rock')})
 
 paper.addEventListener('click', () => {
-playGame('paper', getComputerChoice)})
+playGame('paper')})
 
 scissor.addEventListener('click', () => {
-playGame('scissor', getComputerChoice)})
+playGame('scissor')})
 
 
 // count down 10-0:

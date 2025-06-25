@@ -61,41 +61,45 @@ function playRound(humanChoice, computerChoice) {
     } else if ((humanChoice == 'rock' && computerChoice == 'scissor') ||
      (humanChoice == 'paper' && computerChoice == 'rock') ||
      (humanChoice == 'scissor' && computerChoice == 'paper')) {
-        result.textContent = `${humanChoice} beats ${computerChoice}`
-        humanScore++
-        displayCompScore.textContent = `Computer's Running Score: ${computerScore}`
-        displayHumanScore.textContent = `Human's Running Score: ${humanScore}`
+        result.textContent = `${humanChoice} beats ${computerChoice}`;
+        humanScore++;
+        displayCompScore.textContent = `Computer's Running Score: ${computerScore}`;
+        displayHumanScore.textContent = `Human's Running Score: ${humanScore}`;
 
     }
     else {
         result.textContent ="Tie! No score!";
     }
-    checkForWinner()
-    
 }
 
-function checkForWinner() {
+function playGame(choice) {
+
+    playRound(choice, getComputerChoice())
 
     if (humanScore === 5) {
         finalResult.textContent = "You win the game";
         rock.disabled = true;
         paper.disabled = true;
         scissor.disabled = true;
+
     } else if (computerScore===5) {
         finalResult.textContent = "You lose the game";
         rock.disabled = true;
         paper.disabled = true;
         scissor.disabled = true;
-    }
 
+
+    }
 }
 
-
 rock.addEventListener('click', () => {
-playRound('rock', getComputerChoice())})
+playGame('rock', getComputerChoice)})
 
 paper.addEventListener('click', () => {
-playRound('paper', getComputerChoice())})
+playGame('paper', getComputerChoice)})
 
 scissor.addEventListener('click', () => {
-playRound('scissor', getComputerChoice())})
+playGame('scissor', getComputerChoice)})
+
+
+// count down 10-0:
